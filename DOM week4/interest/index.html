@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Sum Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+    let timeout;
+    function debouncePopulateDiv(){
+        clearTimeout(timeout);
+        setTimeout(()=>{
+            populateDiv();
+        },100);
+    }
+    async function populateDiv(){
+        const p = document.getElementById("p").value; 
+        const r = document.getElementById("r").value; 
+        const t = document.getElementById("t").value; 
+
+        // const response = await fetch("http://localhost:3000/calculateInterest?p="+p+"&r="+r+"&t="+t);
+        const response = await fetch("http://localhost:3000/calculateInterest?p="+p+"&r="+r+"&t="+t);
+        const final = await response.text();
+        console.log(final)
+
+        document.getElementById("answer").innerHTML = "The ans is " +final;
+    }
+</script>
+<body>
+    <div class="container">
+        <div class="card">
+            <input class="inputs" id="p" type="text" placeholder="Principal"></input>
+            <input class="inputs" id="r" type="text" placeholder="Rate of Interest"></input>
+            <input class="inputs" id="t" type="text" placeholder="Time period in years"></input>
+
+            <button onclick="debouncePopulateDiv()" id="submit">Calculate</button>
+            <!-- <button onclick="populateDiv()" id="submit">Calculate</button> -->
+            <div id="answer"></div>
+        </div>
+    </div>
+</body>
+</html>
