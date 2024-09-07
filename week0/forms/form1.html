@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Job Application</h2>
+
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" />
+
+    <p></p>
+
+    <label for="email">Email ID</label>
+    <input type="email" name="email" id="email" />
+    <p></p>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" name="phone" id="phone" />
+    <p></p>
+
+    <label for="resume">Resume:</label>
+    <input type="file" name="resume" id="resume" />
+    <p></p>
+    <label for="counter">Experience(years):</label>
+    <input type="number" name="counter" id="counter" min="0" max="50">
+    
+
+
+    <fieldset>
+      <legend>Skills:</legend>
+      <label for="checkbox1">HTML</label>
+      <input type="checkbox" name="checkbox" id="checkbox1" />
+
+      <p></p>
+      <label for="checkbox12">CSS</label>
+      <input type="checkbox" name="checkbox" id="checkbox12" />
+      <p></p>
+      <label for="checkbox123">JavaScript</label>
+      <input type="checkbox" name="checkbox" id="checkbox123" />
+    </fieldset>
+    <p></p>
+
+    <label for="education">HIghest Education:</label>
+    <select name="education" id="education">
+      <option value="High School">HIgh School</option>
+      <option value="Graduate">Graduate</option>
+      <option value="PHD">PHD</option>
+    </select>
+    <p></p>
+
+    <fieldset>
+      <legend>Availability</legend>
+
+      <label for="fulltime">Full-Time</label>
+      <input type="radio" name="availability" id="fulltime" />
+      <p></p>
+      <label for="parttime">Part-Time</label>
+      <input type="radio" name="availability" id="parttime" />
+    </fieldset>
+    
+    <p></p>
+    <label for="comments">Additional Comments</label>
+    <p></p>
+    <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+    <input type="button" value="submit application">
+
+
+</body>
+</html>
