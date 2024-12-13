@@ -1,0 +1,19 @@
+version: "3.9"
+services: 
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+  
+  backend:
+    image: tanmay1311/firstsample:v1
+    ports:
+      - "3000:3000"
+    container_name: backend22
+    environment:
+      MONGO_URL: "mongodb://mongodb:27017"
+volumes:
+  mongodb_data: {}
